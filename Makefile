@@ -1,5 +1,7 @@
 BIN_DIR = bin
 
+.PHONY: all build clean test
+
 all: clean build
 
 build:
