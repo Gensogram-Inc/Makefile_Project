@@ -1,0 +1,22 @@
+# Makefile
+.PHONY: all validate backup clean
+
+SCRIPT = deploy.sh
+BACKUP_DIR = backups
+
+define run_shell_cmd
+	@echo "Running command: $(1)"
+	@$(1)
+endef
+
+all: validate backup
+
+validate:
+	$(call run_shell_cmd, bash $(SCRIPT) validate_config)
+
+backup:
+	$(call run_shell_cmd, bash $(SCRIPT) backup_configs)
+
+clean:
+	@echo "Cleaning up backups"
+	@rm -rf $(BACKUP_DIR)
