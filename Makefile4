@@ -1,0 +1,11 @@
+define say_hello
+	@echo "Hello, $(1)!"
+endef
+
+all: say_hello_world say_hello_John
+
+say_hello_world:
+	$(call say_hello)
+
+say_hello_John:
+	$(call say_hello, "John")
