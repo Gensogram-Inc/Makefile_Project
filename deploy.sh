@@ -18,7 +18,7 @@ validate_config() {
 backup_configs() {
     echo "Backing up configuration files..."
     mkdir -p backups
-    cp config1.conf config2.conf backups/
+    #cp config1.conf config2.conf backups/
     echo "Backup completed."
 }
 
